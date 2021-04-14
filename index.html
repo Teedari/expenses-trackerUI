@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Expenses Tracker UI</title>
+  <link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+  <div class="container">
+
+    <div class="grid">
+      <aside class='aside'><h2>@Teedari</h2></aside>
+      <main class='main'>
+        <p class="header-text"><span class="label">Expense Tracker</span> 22-03-2021</p>
+        <p class="balance"><span>Your balance</span>$260.00</p>
+        <div class="spents card">
+          <div class="spents-income">
+            <h3>income</h3>
+            <h3 class="income">$500.00</h3>
+          </div>
+          <div class="spents-expense">
+            <h3>expense</h3>
+            <h3 class="expense">$240.00</h3>
+          </div>
+        </div>
+        <!--History-->
+        <div class="history">
+          <h2 class="label">History</h2>
+          <!-- Card 1-->
+          <div class="card secondary">
+            <div class="placeholder">
+              <div class="d-flex card-info">
+                <p>Cash</p>
+              </div>
+              <button class='span-button'>Del</button>
+            </div>
+            <p class='amount'>+500</p>
+          </div>
+          <!-- Card 1-->
+          <div class="card primary">
+            <div class="placeholder">
+              <div class="d-flex card-info">
+                <p>Gloceries</p>
+              </div>
+              <button class='span-button'>Del</button>
+            </div>
+            <p class='amount'>-500</p>
+          </div>
+          <!-- Card 1-->
+          <div class="card secondary">
+            <div class="placeholder">
+              <div class="d-flex card-info">
+                <p>Cash</p>
+              </div>
+              <button class='span-button'>Del</button>
+            </div>
+            <p class='amount'>+500</p>
+          </div>
+          
+        </div>
+        <!--Add Transaction-->
+        <div class="transaction">
+          <h2 class="label">Create a transaction</h2>
+          <form action="">
+            <div class="form-group">
+              <label for="title">Title</label>
+              <input type="text" placeholder="Enter Title">
+            </div>
+            <div class="form-group">
+              <label for="title">Amount <span>(Negative-expenses, positive-income</span></label>
+              <input type="text" placeholder="Enter Title">
+            </div>
+            <button>Add transaction</button>
+          </form>
+        </div>
+      </main>
+    </div>
+  </div>
+  <script>
+    document.querySelector('.span-button').addEventListener('click', function(){
+      alert('hello');
+    })
+  </script>
+</body>
+</html>

@@ -1,0 +1,278 @@
+*{
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+:root{
+  --primary: #00B677;
+  --primary-sm: #00b67654;
+  --accent: #666214;
+  --secondary: #00B6FF;
+  --secondary-sm: #00b7ff6b;
+  --primary-2: #ff0800c2;
+  --primary-2-sm: #d44;
+  --bg: #f5f5f5;
+  --bg-container: #fff;
+}
+
+body{
+  margin: 2rem;
+  background: #f5f5f5;
+  font-family: sans-serif;
+}
+
+.container{
+  max-width: 575px;
+  margin: 0 auto;
+}
+.grid{
+  display: grid;
+  grid-template-columns: 10% auto;
+  background: var(--bg-container);
+}
+
+.aside{
+  background: var(--primary-2-sm);
+  display: grid;
+  place-content: center;
+  color: var(--bg);
+}
+
+.aside h2{
+  transform: rotate(-90deg);
+}
+.main{
+  padding: 1rem;
+}
+
+.d-flex{
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.header-text{
+  font-size: .8rem;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+}
+.header-text span{
+  color: var(--primary-2-sm);
+  font-size: 1.5rem;
+  font-weight: bolder;
+}
+.label{
+  font-size: 1.2rem;
+  padding: .5rem 0;
+  color: var(--primary-2-sm);
+}
+.balance{
+  margin: .5rem 0;
+  border: 2px dotted var(--secondary);
+  padding: 1rem;
+  /* display: inline-block; */
+}
+.balance span{
+  color:  var(--secondary);
+  display: block;
+
+}
+
+.spents{
+  display: flex;
+  justify-content: space-between;
+  padding: 1rem;
+  margin: .5rem 0;
+  position: relative;
+  /* background-color: rgba(121, 22, 22, 0.438); */
+}
+
+.spents::after{
+  position: absolute;
+  content: '';
+  box-shadow: inset 10px 2px 2px rgba(0,0,0,0.1);
+  /* background-color: rgb(199, 183, 183); */
+  width: .1rem;
+  height: 60%;
+  margin: auto;
+  bottom: 0;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 999;
+
+}
+.spents h3{
+  font-weight: 400;
+}
+.spents-income, .spents-expense{
+  font-size: 1rem;
+  padding: 1rem;
+}
+
+.spents-income h3:not(:first-child){
+  color: var(--primary);
+  font-weight: 600;
+}
+
+.spents-expense h3:not(:first-child){
+  color: var(--secondary);
+  font-weight: 600;
+}
+
+.card{
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+/*** History ***/
+.history{
+  height: 250px;
+  max-height: 250px;
+  overflow-y: auto;
+}
+
+.history .label{
+  position: sticky;
+  top: 0;
+  background: transparent !important;
+}
+
+.history::-webkit-scrollbar{
+  display: none;
+}
+
+
+.history .card{
+  position: relative;
+  padding: 1rem;
+  margin: .5rem;
+  transition: all 1000ms;
+  justify-content: flex-end;
+  overflow: hidden;
+  
+}
+.history .card:hover{
+  cursor: pointer;
+}
+.history .card.primary::after{
+  position: absolute;
+  content: '';
+  background-color: var(--primary);
+  width: .3rem;
+  height: 100%;
+  top: 0;
+  bottom: 0;
+  right: 0;
+}
+
+.history .card.secondary::after{
+  position: absolute;
+  content: '';
+  background-color: var(--secondary);
+  width: .3rem;
+  height: 100%;
+  top: 0;
+  bottom: 0;
+  right: 0;
+}
+
+
+.span-button{
+  outline: none;
+  border: none;
+  padding: 1rem;
+  width: 50px;
+  height: 50px;
+  display: inline-block;
+  cursor: pointer;
+  font-weight: bold;
+  box-shadow:  0 2px 4px rgba(0,0,0,0.1),
+   -4px -8px 4px rgba(255, 255, 255, 0.911);
+  background-color: transparent;
+  transition: all 200ms;
+    }
+
+.span-button:hover{
+  transform: scale(.9)
+}
+.card-info{
+  margin-left: 20px;
+}
+
+.amount{
+  position: absolute;
+  right: 0;
+  top: 0;
+
+  height: 100%;
+  display: grid;
+  justify-content: flex-end;
+  align-items: center;
+  margin-right: 20px;
+}
+
+.placeholder{
+  display: flex;
+  align-items: center;
+  flex-flow: row-reverse;
+  transform: translateX(-68px);
+  transition: all 500ms;
+
+}
+.history .card:hover .placeholder{
+
+  transform: translateX(0);
+
+}
+
+
+.transaction{
+  padding: 1rem 0;
+}
+
+.form-group{
+
+}
+
+.form-group label{
+  display: block;
+  font-size: 1rem;
+  margin: .5rem 0;
+}
+
+.form-group input[type='text']{
+  width: 100%;
+  padding: .8rem;
+  border: none;
+  background-color: var(--bg);
+
+  margin: .5rem 0;
+}
+.form-group input[type='text']:focus{
+  outline: none;
+  /* background-color: transparent; */
+  /* border-bottom: 2px solid var(--bg); */
+}
+
+button{
+  float: right;
+  padding: .8rem;
+  border: none;
+  border-bottom: 1px solid var(--primary-2);
+  border-top: 1px solid var(--primary-2);
+  /* border: none; */
+  outline: none;
+  transition: transform 200ms;
+  background: transparent;
+  cursor: pointer;
+}
+
+button:hover{
+  background-color: var(--primary-2);
+  transform: scale(.9);
+  color: var(--bg);
+}
